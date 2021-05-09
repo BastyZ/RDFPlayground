@@ -72,6 +72,30 @@ information.
 For more information on the serve command see 
 https://cli.vuejs.org/guide/cli-service.html#vue-cli-service-serve.
 
+### Docker
+There is also the option to install the project using Docker and Docker Compose.
+
+First you have to build the project containers running the following command in the folder where `docker-compose.yml` is:
+
+```
+docker-compose build
+```
+If you want to build the containers separately you may add the container's name, `odin` for frontend and `mimir` for backend, at the end of the last command, that is:
+```
+docker-compose build odin
+docker-compose build mimir
+```
+
+Then, just run the containers running:
+```
+docker-compose up
+```
+
+For more information on Docker commands see the following links:
+* https://docs.docker.com/engine/reference/commandline/cli/
+* https://docs.docker.com/compose/reference/
+
+
 ## Configuration
 For configurations on the backend and frontend see their respective README
 files.

@@ -1,0 +1,20 @@
+version: "3.4"
+
+services: 
+  mimir:
+    build:
+      context: ./mimir
+    volumes:
+      - ./mimir/src:/app/mimir/src:rw
+      - ./mimir/pom.xml:/app/mimir/pom.xml:rw
+    ports: 
+      - "9060:9060"
+  odin:
+    build:
+      context: ./odin
+    volumes: 
+      - ./odin/src:/app/odin/src:rw
+      - ./odin/package.json:/app/odin/package.json:rw
+      - ./odin/package-lock.json:/app/odin/package-lock.json:rw
+    ports: 
+      - "9080:9080"
